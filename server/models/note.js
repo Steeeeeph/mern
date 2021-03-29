@@ -7,16 +7,22 @@ const noteSchema = new Schema({
         type: String,
         required: true
     },
-    snippet: {
-        type: String,
-        required: true
-
-    },
-    body: {
+    message: {
         type: String,
         required: true
     },
+    tags: [{
+        type: String,
+        required: true
+    }],
+    selectedFile:{
+        type: String,
+    },
+    likeCount: {
+        type: Number,
+        default: 0
+    }
 }, {timestamps: true});
 
-const Note = mongoose.model('Note', noteSchema);
-export  { Note };
+const NoteModel = mongoose.model('NoteModel', noteSchema);
+export default { NoteModel };

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const chrystalSchema = new Schema({
+const crystalSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -25,5 +25,5 @@ const chrystalSchema = new Schema({
     }
 }, {timestamps: true});
 
-const Chrystal = mongoose.model('Chrystal', chrystalSchema);
-module.exports = Chrystal;
+const Crystal = mongoose.model('Crystal', crystalSchema);
+module.exports = Crystal;

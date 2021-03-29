@@ -6,15 +6,15 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true
-      },
-      passwordHash: {
+    },
+    passwordHash: {
         type: String,
         required: true
-      },
-      numFavorites: {
+    },
+        numFavorites: {
         type: Number
-      }
+    }
 });
 
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+const userModel = mongoose.model('User', userSchema);
+export { userModel }
