@@ -8,6 +8,8 @@
 // const path = require('path');
 // const noteModel = require('./models/note');
 import express from 'express';
+import graphqlHTTP from 'express-graphql';
+import { buildSchema } from 'graphql';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -18,10 +20,12 @@ const __dirname = path.resolve('../client');
 import noteRoutes from './routes/notes.js';
 
 const app = express();
-app.use('/notes', noteRoutes)
-app.use(bodyParser.json({limit: "30mb", extended: true}));
+app.use(bodyParser.json({limit: "30mb"}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
+
+app.use('/notes', noteRoutes)
+
 
 const PORT = process.env.PORT || 5000;
 

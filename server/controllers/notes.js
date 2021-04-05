@@ -9,7 +9,7 @@ const getNotes = async (req, res) => {
         res.status(404).json({message: error.message})
     }
 }
-const createNote = (req, res) => {
+const createNote = async (req, res) => {
     const note = req.body;
     const newNote = new NoteModel(note);
 
